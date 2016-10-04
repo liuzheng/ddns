@@ -62,7 +62,7 @@ def Step1(email, password):
             print i['id'], i['name'], i['value'], i['type'], i['ttl']
 
 
-def main(email, password, domain_id, record_id,domain):
+def main(email, password, domain_id, record_id,domain, sub_domain):
     if not domain_id or not record_id or not domain:
         print("Please Check your domain_id/record_id/domain")
         exit()
@@ -77,7 +77,7 @@ def main(email, password, domain_id, record_id,domain):
         "format": "json",
         "domain_id": domain_id,
         "record_id": record_id,
-        "sub_domain": "school",
+        "sub_domain": sub_domain,
         "value": ip,
         "record_type": "A",
         "record_line": "默认",
@@ -93,4 +93,5 @@ if __name__ == '__main__':
     domain_id = ""
     record_id = ""
     domain = ''
-    main(email, password, domain_id, record_id, domain)
+    sub_domain = ''
+    main(email, password, domain_id, record_id, domain, sub_domain)
